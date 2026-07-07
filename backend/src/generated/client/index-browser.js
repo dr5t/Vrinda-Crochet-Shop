@@ -123,11 +123,16 @@ exports.Prisma.UserScalarFieldEnum = {
   createdAt: 'createdAt'
 };
 
-exports.Prisma.SellerProfileScalarFieldEnum = {
+exports.Prisma.AddressScalarFieldEnum = {
   id: 'id',
   userId: 'userId',
-  storeName: 'storeName',
-  rating: 'rating'
+  name: 'name',
+  street: 'street',
+  city: 'city',
+  state: 'state',
+  pinCode: 'pinCode',
+  phone: 'phone',
+  isDefault: 'isDefault'
 };
 
 exports.Prisma.ProductScalarFieldEnum = {
@@ -137,21 +142,26 @@ exports.Prisma.ProductScalarFieldEnum = {
   price: 'price',
   stock: 'stock',
   images: 'images',
+  isMadeToOrder: 'isMadeToOrder',
+  processingTime: 'processingTime',
+  variants: 'variants',
+  isVisible: 'isVisible',
   createdAt: 'createdAt',
-  sellerId: 'sellerId',
   categoryId: 'categoryId'
 };
 
 exports.Prisma.CategoryScalarFieldEnum = {
   id: 'id',
-  name: 'name'
+  name: 'name',
+  imageUrl: 'imageUrl'
 };
 
 exports.Prisma.CartItemScalarFieldEnum = {
   id: 'id',
   userId: 'userId',
   productId: 'productId',
-  quantity: 'quantity'
+  quantity: 'quantity',
+  variant: 'variant'
 };
 
 exports.Prisma.OrderScalarFieldEnum = {
@@ -159,6 +169,9 @@ exports.Prisma.OrderScalarFieldEnum = {
   userId: 'userId',
   total: 'total',
   status: 'status',
+  paymentMethod: 'paymentMethod',
+  shippingAddress: 'shippingAddress',
+  customNotes: 'customNotes',
   createdAt: 'createdAt'
 };
 
@@ -166,13 +179,16 @@ exports.Prisma.OrderItemsScalarFieldEnum = {
   id: 'id',
   orderId: 'orderId',
   productId: 'productId',
-  quantity: 'quantity'
+  quantity: 'quantity',
+  price: 'price',
+  variant: 'variant'
 };
 
 exports.Prisma.ReviewScalarFieldEnum = {
   id: 'id',
   rating: 'rating',
   comment: 'comment',
+  imageUrl: 'imageUrl',
   createdAt: 'createdAt',
   userId: 'userId',
   productId: 'productId'
@@ -183,17 +199,9 @@ exports.Prisma.SiteConfigScalarFieldEnum = {
   heroTitle: 'heroTitle',
   heroSub: 'heroSub',
   footerText: 'footerText',
-  headerTitle: 'headerTitle',
+  maintenance: 'maintenance',
+  codEnabled: 'codEnabled',
   updatedAt: 'updatedAt'
-};
-
-exports.Prisma.FeedbackScalarFieldEnum = {
-  id: 'id',
-  rating: 'rating',
-  comment: 'comment',
-  imageUrl: 'imageUrl',
-  userId: 'userId',
-  createdAt: 'createdAt'
 };
 
 exports.Prisma.SortOrder = {
@@ -207,21 +215,19 @@ exports.Prisma.NullsOrder = {
 };
 exports.Role = exports.$Enums.Role = {
   USER: 'USER',
-  SELLER: 'SELLER',
   ADMIN: 'ADMIN'
 };
 
 exports.Prisma.ModelName = {
   User: 'User',
-  SellerProfile: 'SellerProfile',
+  Address: 'Address',
   Product: 'Product',
   Category: 'Category',
   CartItem: 'CartItem',
   Order: 'Order',
   OrderItems: 'OrderItems',
   Review: 'Review',
-  SiteConfig: 'SiteConfig',
-  Feedback: 'Feedback'
+  SiteConfig: 'SiteConfig'
 };
 
 /**

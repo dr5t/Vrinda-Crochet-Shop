@@ -31,7 +31,7 @@ export default function LiquidButton({ title, onPress, style }: LiquidButtonProp
 
 const styles = StyleSheet.create({
   wrapper: {
-    shadowColor: '#7FD8FF',
+    shadowColor: '#596859',
     shadowOffset: { width: 0, height: 10 },
     shadowOpacity: 0.3,
     shadowRadius: 20,
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     paddingHorizontal: 32,
     borderRadius: 99,
-    backgroundColor: '#7FD8FF', // Primary liquid color
+    backgroundColor: '#596859', // Primary liquid color
     alignItems: 'center',
     justifyContent: 'center',
   },

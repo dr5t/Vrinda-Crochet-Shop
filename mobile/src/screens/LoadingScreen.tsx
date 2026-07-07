@@ -49,14 +49,14 @@ const styles = StyleSheet.create({
   blob: {
     width: 100,
     height: 100,
-    backgroundColor: '#7FD8FF',
+    backgroundColor: '#596859',
     opacity: 0.4,
     marginBottom: 40,
   },
   text: {
     fontSize: 14,
     fontWeight: '700',
-    color: '#7FD8FF',
+    color: '#596859',
     letterSpacing: 2,
     textTransform: 'uppercase',
   },

@@ -22,7 +22,7 @@ export default function CartScreen() {
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backBtn}>
-          <ArrowLeft size={24} color="#1A1A1A" />
+          <ArrowLeft size={24} color="#383833" />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Your Cart</Text>
         <View style={{ width: 44 }} />
@@ -76,26 +76,26 @@ export default function CartScreen() {
 }
 
 const styles = StyleSheet.create({
-  safeArea: { flex: 1, backgroundColor: '#F8FAFF' },
+  safeArea: { flex: 1, backgroundColor: '#fffcf7' },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 20 },
   backBtn: { padding: 10, backgroundColor: 'white', borderRadius: 12 },
-  headerTitle: { fontSize: 20, fontWeight: 'bold', color: '#1A1A1A' },
+  headerTitle: { fontSize: 20, fontWeight: 'bold', color: '#383833' },
   scrollContent: { padding: 20 },
   cartItem: { flexDirection: 'row', backgroundColor: 'white', borderRadius: 24, padding: 12, marginBottom: 16, alignItems: 'center', shadowColor: '#000', shadowOpacity: 0.03, shadowRadius: 10, elevation: 2 },
   itemImage: { width: 80, height: 80, borderRadius: 16, marginRight: 16 },
   itemInfo: { flex: 1 },
-  itemTitle: { fontSize: 16, fontWeight: 'bold', color: '#1A1A1A', marginBottom: 4 },
-  itemPrice: { fontSize: 18, fontWeight: 'bold', color: '#7FD8FF', marginBottom: 12 },
+  itemTitle: { fontSize: 16, fontWeight: 'bold', color: '#383833', marginBottom: 4 },
+  itemPrice: { fontSize: 18, fontWeight: 'bold', color: '#596859', marginBottom: 12 },
   qtyContainer: { flexDirection: 'row', alignItems: 'center', gap: 12 },
   qtyBtn: { padding: 6, backgroundColor: '#F3F4F6', borderRadius: 8 },
-  qtyText: { fontSize: 16, fontWeight: 'bold', color: '#1A1A1A' },
+  qtyText: { fontSize: 16, fontWeight: 'bold', color: '#383833' },
   deleteBtn: { padding: 12, marginLeft: 10 },
   footer: { padding: 24, backgroundColor: 'white', borderTopLeftRadius: 32, borderTopRightRadius: 32, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 20, elevation: 10 },
   totalRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 },
-  totalLabel: { fontSize: 16, color: '#6B7280', fontWeight: 'bold' },
-  totalValue: { fontSize: 24, fontWeight: 'bold', color: '#1A1A1A' },
+  totalLabel: { fontSize: 16, color: '#65655e', fontWeight: 'bold' },
+  totalValue: { fontSize: 24, fontWeight: 'bold', color: '#383833' },
   checkoutBtn: { width: '100%' },
   emptyContainer: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingVertical: 100 },
-  emptyText: { fontSize: 18, fontWeight: 'bold', color: '#9CA3AF', marginTop: 20, marginBottom: 10 },
-  browseText: { fontSize: 16, fontWeight: 'bold', color: '#7FD8FF' },
+  emptyText: { fontSize: 18, fontWeight: 'bold', color: '#bbb9b2', marginTop: 20, marginBottom: 10 },
+  browseText: { fontSize: 16, fontWeight: 'bold', color: '#596859' },
 });

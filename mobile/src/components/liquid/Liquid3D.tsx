@@ -8,7 +8,7 @@ function AnimatedSphere() {
     <Float speed={2} rotationIntensity={1} floatIntensity={2}>
       <Sphere args={[1, 32, 32]} scale={1.2}>
         <MeshDistortMaterial
-          color="#7FD8FF"
+          color="#596859"
           distort={0.4}
           speed={3}
         />
@@ -20,7 +20,7 @@ function AnimatedSphere() {
 export default function Liquid3D() {
   return (
     <View style={styles.container}>
-      <Suspense fallback={<ActivityIndicator color="#7FD8FF" />}>
+      <Suspense fallback={<ActivityIndicator color="#596859" />}>
         <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
           <ambientLight intensity={0.5} />
           <directionalLight position={[10, 10, 5]} intensity={1} />
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   badgeText: {
     fontSize: 10,
     fontWeight: 'bold',
-    color: '#7FD8FF',
+    color: '#596859',
     textTransform: 'uppercase',
   },
 });

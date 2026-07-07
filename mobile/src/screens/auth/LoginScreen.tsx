@@ -13,11 +13,11 @@ export default function LoginScreen() {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <Blob size={500} gradient={["#CDB4FF", "#7FD8FF"]} style={styles.bgBlob} />
+      <Blob size={500} gradient={["#875858", "#596859"]} style={styles.bgBlob} />
       
       <ScrollView contentContainerStyle={styles.content}>
         <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>
-          <ArrowLeft size={24} color="#1A1A1A" />
+          <ArrowLeft size={24} color="#383833" />
         </TouchableOpacity>
 
         <Text style={styles.title}>Welcome back ✨</Text>
@@ -25,7 +25,7 @@ export default function LoginScreen() {
 
         <View style={styles.form}>
           <View style={styles.inputWrapper}>
-            <Mail size={20} color="#9CA3AF" style={styles.inputIcon} />
+            <Mail size={20} color="#bbb9b2" style={styles.inputIcon} />
             <TextInput 
               placeholder="Email your magic..." 
               style={styles.input} 
@@ -35,7 +35,7 @@ export default function LoginScreen() {
           </View>
 
           <View style={styles.inputWrapper}>
-            <Lock size={20} color="#9CA3AF" style={styles.inputIcon} />
+            <Lock size={20} color="#bbb9b2" style={styles.inputIcon} />
             <TextInput 
               placeholder="Your secret code" 
               style={styles.input} 
@@ -62,20 +62,20 @@ export default function LoginScreen() {
 }
 
 const styles = StyleSheet.create({
-  safeArea: { flex: 1, backgroundColor: '#F8FAFF' },
+  safeArea: { flex: 1, backgroundColor: '#fffcf7' },
   bgBlob: { top: -200, right: -150, opacity: 0.3 },
   content: { padding: 30, paddingTop: 60 },
   backBtn: { marginBottom: 40 },
-  title: { fontSize: 36, fontWeight: 'bold', color: '#1A1A1A', marginBottom: 8 },
-  subtitle: { color: '#6B7280', marginBottom: 40, fontWeight: '500' },
+  title: { fontSize: 36, fontWeight: 'bold', color: '#383833', marginBottom: 8 },
+  subtitle: { color: '#65655e', marginBottom: 40, fontWeight: '500' },
   form: { marginTop: 20 },
   inputWrapper: { flexDirection: 'row', alignItems: 'center', backgroundColor: 'white', borderRadius: 20, paddingHorizontal: 20, height: 60, marginBottom: 20, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 10, elevation: 2 },
   inputIcon: { marginRight: 15 },
-  input: { flex: 1, fontSize: 16, color: '#1A1A1A' },
+  input: { flex: 1, fontSize: 16, color: '#383833' },
   forgotBtn: { alignSelf: 'flex-end', marginBottom: 30 },
-  forgotText: { fontSize: 14, fontWeight: 'bold', color: '#6B7280' },
+  forgotText: { fontSize: 14, fontWeight: 'bold', color: '#65655e' },
   loginBtn: { width: '100%' },
   footer: { flexDirection: 'row', justifyContent: 'center', marginTop: 40 },
-  footerText: { color: '#6B7280' },
-  linkText: { fontWeight: 'bold', color: '#7FD8FF' },
+  footerText: { color: '#65655e' },
+  linkText: { fontWeight: 'bold', color: '#596859' },
 });

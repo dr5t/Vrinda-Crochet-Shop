@@ -28,18 +28,18 @@ export default function ProductDetailScreen() {
             style={styles.backBtn}
             onPress={() => navigation.goBack()}
           >
-            <ArrowLeft size={24} color="#1A1A1A" />
+            <ArrowLeft size={24} color="#383833" />
           </TouchableOpacity>
 
           <TouchableOpacity 
             style={styles.cubeBtn}
             onPress={() => setView3D(!view3D)}
           >
-            <Cube size={20} color={view3D ? "#7FD8FF" : "#1A1A1A"} />
+            <Cube size={20} color={view3D ? "#596859" : "#383833"} />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.heartBtn}>
-            <Heart size={24} color="#FFC8A2" fill="#FFC8A2" />
+            <Heart size={24} color="#6c6450" fill="#6c6450" />
           </TouchableOpacity>
         </View>
 
@@ -80,7 +80,7 @@ export default function ProductDetailScreen() {
       {/* Sticky Bottom Actions */}
       <View style={styles.bottomBar}>
         <TouchableOpacity style={styles.cartIconBtn}>
-          <ShoppingBag size={24} color="#7FD8FF" />
+          <ShoppingBag size={24} color="#596859" />
         </TouchableOpacity>
         <LiquidButton 
           title="Add to Cart" 
@@ -104,17 +104,17 @@ const styles = StyleSheet.create({
   categoryBadge: { paddingHorizontal: 12, paddingVertical: 6, backgroundColor: '#EEF2FF', borderRadius: 12 },
   categoryText: { fontSize: 10, fontWeight: 'bold', color: '#6366F1' },
   ratingRow: { flexDirection: 'row', alignItems: 'center', gap: 4 },
-  ratingText: { fontSize: 12, fontWeight: 'bold', color: '#6B7280' },
-  title: { fontSize: 28, fontWeight: 'bold', color: '#1A1A1A', marginBottom: 12 },
-  price: { fontSize: 24, fontWeight: 'bold', color: '#7FD8FF', marginBottom: 16 },
-  description: { fontSize: 15, color: '#6B7280', lineHeight: 24, marginBottom: 32 },
-  sellerCard: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 16, backgroundColor: '#F8FAFF', borderRadius: 24 },
+  ratingText: { fontSize: 12, fontWeight: 'bold', color: '#65655e' },
+  title: { fontSize: 28, fontWeight: 'bold', color: '#383833', marginBottom: 12 },
+  price: { fontSize: 24, fontWeight: 'bold', color: '#596859', marginBottom: 16 },
+  description: { fontSize: 15, color: '#65655e', lineHeight: 24, marginBottom: 32 },
+  sellerCard: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 16, backgroundColor: '#fffcf7', borderRadius: 24 },
   sellerInfo: { flexDirection: 'row', alignItems: 'center', gap: 12 },
-  sellerAvatar: { width: 44, height: 44, borderRadius: 22, backgroundColor: '#7FD8FF' },
-  sellerName: { fontSize: 16, fontWeight: 'bold', color: '#1A1A1A' },
-  sellerSub: { fontSize: 12, color: '#9CA3AF' },
-  contactBtn: { paddingHorizontal: 16, paddingVertical: 8, borderRadius: 12, borderWidth: 1, borderColor: '#7FD8FF' },
-  contactText: { fontSize: 12, fontWeight: 'bold', color: '#7FD8FF' },
+  sellerAvatar: { width: 44, height: 44, borderRadius: 22, backgroundColor: '#596859' },
+  sellerName: { fontSize: 16, fontWeight: 'bold', color: '#383833' },
+  sellerSub: { fontSize: 12, color: '#bbb9b2' },
+  contactBtn: { paddingHorizontal: 16, paddingVertical: 8, borderRadius: 12, borderWidth: 1, borderColor: '#596859' },
+  contactText: { fontSize: 12, fontWeight: 'bold', color: '#596859' },
   bottomBar: { flexDirection: 'row', alignItems: 'center', padding: 24, paddingBottom: 32, backgroundColor: 'white', borderTopWidth: 1, borderTopColor: '#F3F4F6', gap: 16 },
   cartIconBtn: { padding: 16, borderRadius: 20, backgroundColor: '#F0F9FF', alignItems: 'center', justifyContent: 'center' },
   addBtn: { flex: 1 },

@@ -12,37 +12,36 @@ const CATEGORIES = ["All", "Home decor", "Apparel", "Accessories", "Toys"];
 export default function HomeScreen() {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const [products, setProducts] = useState([
-    { id: "1", title: "Pastel Tablecloth", price: 1299, image: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=1072&auto=format&fit=crop" },
-    { id: "2", title: "Handmade Scarf", price: 899, image: "https://images.unsplash.com/photo-1511270339343-bc8516029822?q=80&w=1080&auto=format&fit=crop" },
-    { id: "3", title: "Crochet Amigurumi", price: 599, image: "https://images.unsplash.com/photo-1615486511484-92e175cca4ee?q=80&w=1080&auto=format&fit=crop" },
+    { id: "1", title: "Autumn Sweater", price: 2499, image: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=1072&auto=format&fit=crop" },
+    { id: "2", title: "Classic Beanie", price: 899, image: "https://images.unsplash.com/photo-1511270339343-bc8516029822?q=80&w=1080&auto=format&fit=crop" },
+    { id: "3", title: "Amigurumi Bear", price: 1200, image: "https://images.unsplash.com/photo-1615486511484-92e175cca4ee?q=80&w=1080&auto=format&fit=crop" },
+    { id: "4", title: "Macrame Plant Hanger", price: 650, image: "https://images.unsplash.com/photo-1599387737976-5915d3151dfb?q=80&w=1080&auto=format&fit=crop" },
   ]);
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <Blob size={400} gradient={["#596859", "#875858"]} style={styles.topBlob} />
-      
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
         {/* Header */}
         <View style={styles.header}>
           <View>
-            <Text style={styles.welcomeText}>Hello Guest 👋</Text>
-            <Text style={styles.title}>Explore Designs</Text>
+            <Text style={styles.welcomeText}>Welcome to Vrindaa 👋</Text>
+            <Text style={styles.title}>Handcrafted with Intention</Text>
           </View>
           <TouchableOpacity 
             style={styles.iconBtn}
             onPress={() => navigation.navigate('Cart')}
           >
-            <ShoppingCart size={24} color="#383833" />
+            <ShoppingCart size={22} color="#596859" />
           </TouchableOpacity>
         </View>
 
         {/* Search Bar */}
         <View style={styles.searchContainer}>
           <View style={styles.searchInputWrapper}>
-            <Search size={20} color="#bbb9b2" style={styles.searchIcon} />
+            <Search size={20} color="#81817a" style={styles.searchIcon} />
             <TextInput 
               placeholder="Search crochet magic..." 
-              placeholderTextColor="#bbb9b2"
+              placeholderTextColor="#81817a"
               style={styles.searchInput}
             />
           </View>
@@ -57,18 +56,23 @@ export default function HomeScreen() {
           ))}
         </ScrollView>
 
-        {/* Product Grid */}
-        <Text style={styles.sectionTitle}>Featured Items 🧶</Text>
+        {/* Featured Items */}
+        <View style={styles.sectionHeader}>
+          <Text style={styles.sectionTitle}>Featured Magic</Text>
+          <TouchableOpacity><Text style={styles.viewAllText}>View all</Text></TouchableOpacity>
+        </View>
+
         <View style={styles.productGrid}>
           {products.map((item) => (
             <TouchableOpacity 
               key={item.id} 
               style={styles.productCard}
               onPress={() => navigation.navigate('ProductDetail', { productId: item.id })}
+              activeOpacity={0.9}
             >
               <Image source={{ uri: item.image }} style={styles.productImage} />
               <View style={styles.productInfo}>
-                <Text style={styles.productTitle}>{item.title}</Text>
+                <Text style={styles.productTitle} numberOfLines={1}>{item.title}</Text>
                 <Text style={styles.productPrice}>₹{item.price}</Text>
               </View>
             </TouchableOpacity>
@@ -81,26 +85,27 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   safeArea: { flex: 1, backgroundColor: '#fffcf7' },
-  topBlob: { top: -100, left: -50, opacity: 0.2 },
-  scrollContent: { padding: 24, paddingBottom: 40 },
-  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 },
-  welcomeText: { fontSize: 14, color: '#65655e', fontWeight: 'bold' },
-  title: { fontSize: 32, fontWeight: 'bold', color: '#383833', fontFamily: 'System' },
-  iconBtn: { padding: 12, backgroundColor: 'white', borderRadius: 20, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 10, elevation: 2 },
-  searchContainer: { marginBottom: 24 },
-  searchInputWrapper: { flexDirection: 'row', alignItems: 'center', backgroundColor: 'white', borderRadius: 25, paddingHorizontal: 20, height: 50, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 10, elevation: 2, borderWidth: 1, borderColor: '#eae8e0' },
-  searchIcon: { marginRight: 10 },
-  searchInput: { flex: 1, fontSize: 16, color: '#383833' },
-  categoryScroll: { marginBottom: 32, marginLeft: -4 },
-  catBtn: { paddingHorizontal: 20, paddingVertical: 10, borderRadius: 20, marginRight: 10, backgroundColor: 'white', borderWidth: 1, borderColor: '#eae8e0' },
+  scrollContent: { padding: 24, paddingBottom: 60 },
+  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 28, marginTop: 10 },
+  welcomeText: { fontSize: 13, color: '#875858', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 4 },
+  title: { fontSize: 28, fontWeight: '800', color: '#383833', lineHeight: 34, maxWidth: 220 },
+  iconBtn: { padding: 14, backgroundColor: 'white', borderRadius: 24, shadowColor: '#383833', shadowOpacity: 0.08, shadowRadius: 15, shadowOffset: { width: 0, height: 5 }, elevation: 4 },
+  searchContainer: { marginBottom: 32 },
+  searchInputWrapper: { flexDirection: 'row', alignItems: 'center', backgroundColor: 'white', borderRadius: 20, paddingHorizontal: 20, height: 56, shadowColor: '#383833', shadowOpacity: 0.04, shadowRadius: 10, shadowOffset: { width: 0, height: 4 }, elevation: 2, borderWidth: 1, borderColor: '#eae8e0' },
+  searchIcon: { marginRight: 12 },
+  searchInput: { flex: 1, fontSize: 16, color: '#383833', height: '100%' },
+  categoryScroll: { marginBottom: 36, marginLeft: -4, paddingLeft: 4 },
+  catBtn: { paddingHorizontal: 22, paddingVertical: 12, borderRadius: 24, marginRight: 12, backgroundColor: 'white', borderWidth: 1, borderColor: '#eae8e0', shadowColor: '#000', shadowOpacity: 0.02, shadowRadius: 4, shadowOffset: { width: 0, height: 2 } },
   activeCat: { backgroundColor: '#596859', borderColor: '#596859' },
   activeCatText: { color: '#fffcf7' },
-  catText: { fontWeight: 'bold', color: '#65655e', fontSize: 14 },
-  sectionTitle: { fontSize: 20, fontWeight: 'bold', color: '#383833', marginBottom: 20 },
+  catText: { fontWeight: '600', color: '#65655e', fontSize: 14 },
+  sectionHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 20 },
+  sectionTitle: { fontSize: 22, fontWeight: '800', color: '#383833' },
+  viewAllText: { fontSize: 14, fontWeight: '600', color: '#596859' },
   productGrid: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' },
-  productCard: { width: '48%', backgroundColor: 'white', borderRadius: 24, padding: 8, marginBottom: 16, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 15, elevation: 3, borderWidth: 1, borderColor: '#eae8e0' },
-  productImage: { width: '100%', aspectRatio: 0.9, borderRadius: 18, marginBottom: 12 },
-  productInfo: { paddingHorizontal: 4, paddingBottom: 8 },
-  productTitle: { fontSize: 14, fontWeight: 'bold', color: '#383833', marginBottom: 4 },
-  productPrice: { fontSize: 16, fontWeight: 'bold', color: '#596859' },
+  productCard: { width: '48%', backgroundColor: 'white', borderRadius: 24, padding: 10, marginBottom: 20, shadowColor: '#383833', shadowOpacity: 0.06, shadowRadius: 20, shadowOffset: { width: 0, height: 8 }, elevation: 4, borderWidth: 1, borderColor: 'rgba(234, 232, 224, 0.5)' },
+  productImage: { width: '100%', aspectRatio: 0.85, borderRadius: 16, marginBottom: 14 },
+  productInfo: { paddingHorizontal: 6, paddingBottom: 8 },
+  productTitle: { fontSize: 15, fontWeight: '700', color: '#383833', marginBottom: 6 },
+  productPrice: { fontSize: 15, fontWeight: '800', color: '#596859' },
 });

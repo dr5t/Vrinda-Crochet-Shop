@@ -19,7 +19,6 @@ export default function LiquidButton({ title, onPress, style }: LiquidButtonProp
         from={{ scale: 1 }}
         animate={{ scale: 1 }}
         transition={{ type: 'spring' }}
-        whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         style={styles.container}
       >

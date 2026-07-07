@@ -3,39 +3,26 @@ import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from "rea
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ArrowLeft, Star, Heart, ShoppingBag, Cuboid as Cube } from "lucide-react-native";
 import LiquidButton from "../components/liquid/LiquidButton";
-import Liquid3D from "../components/liquid/Liquid3D";
 import { useNavigation } from "@react-navigation/native";
 
 export default function ProductDetailScreen() {
   const navigation = useNavigation();
-  const [view3D, setView3D] = React.useState(false);
 
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView showsVerticalScrollIndicator={false}>
         {/* Gallery */}
         <View style={styles.imageContainer}>
-          {view3D ? (
-             <Liquid3D />
-          ) : (
-            <Image 
-              source={{ uri: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=1072&auto=format&fit=crop" }} 
-              style={styles.image}
-            />
-          )}
+          <Image 
+            source={{ uri: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=1072&auto=format&fit=crop" }} 
+            style={styles.image}
+          />
           
           <TouchableOpacity 
             style={styles.backBtn}
             onPress={() => navigation.goBack()}
           >
             <ArrowLeft size={24} color="#383833" />
-          </TouchableOpacity>
-
-          <TouchableOpacity 
-            style={styles.cubeBtn}
-            onPress={() => setView3D(!view3D)}
-          >
-            <Cube size={20} color={view3D ? "#596859" : "#383833"} />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.heartBtn}>

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useCart } from '@/context/CartContext';
 import { Button } from '@/components/ui/Button';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function CheckoutPage() {
   const { cart, totalPrice } = useCart();
@@ -99,7 +100,7 @@ export default function CheckoutPage() {
               {cart.map((item) => (
                 <div key={item.id} className="flex gap-4">
                   <div className="w-16 h-16 bg-[#eae8e0] rounded-lg overflow-hidden flex-shrink-0 border border-[#bbb9b2]/50">
-                    <img src={item.product.images[0] || "https://via.placeholder.com/150"} alt={item.product.title} className="w-full h-full object-cover" />
+                    <Image src={item.product.images[0] || "https://via.placeholder.com/150"} alt={item.product.title} width={64} height={64} className="w-full h-full object-cover" />
                   </div>
                   <div className="flex-1">
                     <h3 className="font-medium text-sm leading-tight">{item.product.title}</h3>

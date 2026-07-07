@@ -1,6 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
-import { MotiView } from 'moti';
+import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
 
 interface LiquidButtonProps {
   title: string;
@@ -15,15 +14,9 @@ export default function LiquidButton({ title, onPress, style }: LiquidButtonProp
       onPress={onPress}
       style={[styles.wrapper, style]}
     >
-      <MotiView
-        from={{ scale: 1 }}
-        animate={{ scale: 1 }}
-        transition={{ type: 'spring' }}
-        whileTap={{ scale: 0.95 }}
-        style={styles.container}
-      >
+      <View style={styles.container}>
         <Text style={styles.text}>{title}</Text>
-      </MotiView>
+      </View>
     </TouchableOpacity>
   );
 }

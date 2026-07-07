@@ -17,16 +17,16 @@ const BottomNav = () => {
   ];
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-t border-autumn-200/30 px-6 py-3 pb-8">
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-t border-[#eae8e0] px-6 py-3 pb-8">
       <div className="flex items-center justify-between max-w-md mx-auto">
         {navItems.map((item) => {
           const isActive = pathname === item.href;
           return (
             <Link key={item.label} href={item.href} className="relative flex flex-col items-center gap-1 group">
-              <span className={`material-symbols-outlined text-[24px] ${isActive ? 'text-primary' : 'text-autumn-400'} transition-colors duration-300`}>
+              <span className={`material-symbols-outlined text-[24px] ${isActive ? 'text-[#596859]' : 'text-[#bbb9b2]'} transition-colors duration-300`}>
                 {item.icon}
               </span>
-              <span className={`text-[10px] font-medium tracking-tight uppercase ${isActive ? 'text-primary' : 'text-autumn-400'} transition-colors duration-300`}>
+              <span className={`text-[10px] font-medium tracking-tight uppercase ${isActive ? 'text-[#596859]' : 'text-[#bbb9b2]'} transition-colors duration-300`}>
                 {item.label}
               </span>
               {isActive && (

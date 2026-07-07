@@ -13,10 +13,11 @@ export default function Footer() {
         <div>
           <h4 className="font-serif italic text-emerald-800 mb-6" style={{ fontFamily: "var(--font-noto-serif)" }}>Shop</h4>
           <ul className="space-y-4 font-body text-sm text-stone-600">
-            <li><Link className="hover:text-emerald-700 hover:translate-x-1 transition-all block" href="/category/bags">Bags</Link></li>
-            <li><Link className="hover:text-emerald-700 hover:translate-x-1 transition-all block" href="/category/toys">Toys</Link></li>
-            <li><Link className="hover:text-emerald-700 hover:translate-x-1 transition-all block" href="/category/clothing">Clothing</Link></li>
-            <li><Link className="hover:text-emerald-700 hover:translate-x-1 transition-all block" href="/category/decor">Decor</Link></li>
+            <li><Link className="hover:text-emerald-700 hover:translate-x-1 transition-all block" href="/category/hair-accessories">Hair Accessories</Link></li>
+            <li><Link className="hover:text-emerald-700 hover:translate-x-1 transition-all block" href="/category/home-decor">Home Decor</Link></li>
+            <li><Link className="hover:text-emerald-700 hover:translate-x-1 transition-all block" href="/category/clothes">Clothes</Link></li>
+            <li><Link className="hover:text-emerald-700 hover:translate-x-1 transition-all block" href="/category/gifts">Gifts</Link></li>
+            <li><Link className="hover:text-emerald-700 hover:translate-x-1 transition-all block" href="/category/other">Other</Link></li>
           </ul>
         </div>
         <div>

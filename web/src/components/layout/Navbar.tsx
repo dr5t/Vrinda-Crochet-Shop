@@ -12,7 +12,7 @@ export default function Navbar() {
   return (
     <>
       {/* Mobile Header */}
-      <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md px-6 py-4 flex items-center justify-between border-b border-autumn-100/20">
+      <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md px-6 py-4 flex items-center justify-between border-b border-[#eae8e0]">
         <Link href="/" className="font-headline text-xl font-bold tracking-tight text-primary">
           Vrindaa Crochet
         </Link>
@@ -43,13 +43,19 @@ export default function Navbar() {
           </Link>
           
           <div className="flex items-center gap-8">
-            {['Shop', 'Arts', 'Clothing', 'About', 'Story'].map((item) => (
+            {[
+              { name: 'Hair Accessories', path: '/category/hair-accessories' },
+              { name: 'Home Decor', path: '/category/home-decor' },
+              { name: 'Clothes', path: '/category/clothes' },
+              { name: 'Gifts', path: '/category/gifts' },
+              { name: 'Other', path: '/category/other' }
+            ].map((item) => (
               <Link 
-                key={item} 
-                href={`/${item.toLowerCase()}`}
+                key={item.name} 
+                href={item.path}
                 className="text-sm font-medium text-emerald-900/70 hover:text-primary transition-colors tracking-wide"
               >
-                {item}
+                {item.name}
               </Link>
             ))}
           </div>

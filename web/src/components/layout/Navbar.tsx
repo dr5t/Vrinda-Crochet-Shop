@@ -36,7 +36,7 @@ export default function Navbar() {
       {/* Desktop Header */}
       <nav className="hidden md:flex fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md px-12 py-5 items-center justify-between border-b border-[#eae8e0]">
         <div className="flex items-center gap-12">
-          <Link href="/" className="font-headline text-2xl font-bold tracking-tight text-[#383833]">
+          <Link href="/" className="font-headline text-2xl font-bold tracking-tight text-[#383833] ">
             Vrindaa Crochet
           </Link>
           <div className="flex gap-8">

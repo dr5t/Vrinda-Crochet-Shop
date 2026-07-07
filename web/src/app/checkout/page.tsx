@@ -22,7 +22,7 @@ export default function CheckoutPage() {
       <div className="container mx-auto px-4 py-32 mt-20 text-center max-w-lg">
         <span className="material-symbols-outlined text-[64px] text-[#bbb9b2] mb-6">shopping_bag</span>
         <h1 className="text-3xl font-headline font-bold mb-4">Your cart is empty</h1>
-        <p className="text-[#65655e] mb-8">Looks like you haven't added anything to your cart yet. Let's find you something special.</p>
+        <p className="text-[#65655e] mb-8">Looks like you haven&apos;t added anything to your cart yet. Let&apos;s find you something special.</p>
         <Link href="/">
           <Button size="lg" className="w-full">Continue Shopping</Button>
         </Link>

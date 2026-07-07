@@ -41,11 +41,11 @@ export default function ProductDetailScreen() {
             </View>
           </View>
 
-          <Text style={styles.title}>Pastel Dream Crochet Cardigan</Text>
+          <Text style={styles.title}>Autumn Crochet Sweater</Text>
           <Text style={styles.price}>₹2,499</Text>
 
           <Text style={styles.description}>
-            Experience ultimate comfort with our hand-knitted lavender cardigan. Made from 100% organic cotton...
+            Experience ultimate comfort with our hand-knitted autumn sweater. Made from 100% organic sustainable cotton, each piece takes over 15 hours to craft. Perfect for cozy evenings and coffee dates.
           </Text>
 
           {/* Seller Section */}
@@ -53,8 +53,8 @@ export default function ProductDetailScreen() {
             <View style={styles.sellerInfo}>
               <View style={styles.sellerAvatar} />
               <View>
-                <Text style={styles.sellerName}>Maria's Knits</Text>
-                <Text style={styles.sellerSub}>Official Artisan</Text>
+                <Text style={styles.sellerName}>Vrindaa Official</Text>
+                <Text style={styles.sellerSub}>Artisan Crafter</Text>
               </View>
             </View>
             <TouchableOpacity style={styles.contactBtn}>
@@ -67,7 +67,7 @@ export default function ProductDetailScreen() {
       {/* Sticky Bottom Actions */}
       <View style={styles.bottomBar}>
         <TouchableOpacity style={styles.cartIconBtn}>
-          <ShoppingBag size={24} color="#596859" />
+          <ShoppingBag size={24} color="#383833" />
         </TouchableOpacity>
         <LiquidButton 
           title="Add to Cart" 
@@ -80,29 +80,28 @@ export default function ProductDetailScreen() {
 }
 
 const styles = StyleSheet.create({
-  safeArea: { flex: 1, backgroundColor: 'white' },
-  imageContainer: { width: '100%', height: 400, position: 'relative' },
+  safeArea: { flex: 1, backgroundColor: '#fffcf7' },
+  imageContainer: { width: '100%', height: 420, position: 'relative' },
   image: { width: '100%', height: '100%' },
-  backBtn: { position: 'absolute', top: 20, left: 20, padding: 12, backgroundColor: 'white', borderRadius: 20 },
-  cubeBtn: { position: 'absolute', top: 20, right: 80, padding: 12, backgroundColor: 'white', borderRadius: 20 },
-  heartBtn: { position: 'absolute', top: 20, right: 20, padding: 12, backgroundColor: 'white', borderRadius: 20 },
-  content: { padding: 24, borderTopLeftRadius: 32, borderTopRightRadius: 32, backgroundColor: 'white', marginTop: -32 },
-  badgeRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 },
-  categoryBadge: { paddingHorizontal: 12, paddingVertical: 6, backgroundColor: '#EEF2FF', borderRadius: 12 },
-  categoryText: { fontSize: 10, fontWeight: 'bold', color: '#6366F1' },
-  ratingRow: { flexDirection: 'row', alignItems: 'center', gap: 4 },
-  ratingText: { fontSize: 12, fontWeight: 'bold', color: '#65655e' },
-  title: { fontSize: 28, fontWeight: 'bold', color: '#383833', marginBottom: 12 },
-  price: { fontSize: 24, fontWeight: 'bold', color: '#596859', marginBottom: 16 },
-  description: { fontSize: 15, color: '#65655e', lineHeight: 24, marginBottom: 32 },
-  sellerCard: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 16, backgroundColor: '#fffcf7', borderRadius: 24 },
-  sellerInfo: { flexDirection: 'row', alignItems: 'center', gap: 12 },
-  sellerAvatar: { width: 44, height: 44, borderRadius: 22, backgroundColor: '#596859' },
-  sellerName: { fontSize: 16, fontWeight: 'bold', color: '#383833' },
-  sellerSub: { fontSize: 12, color: '#bbb9b2' },
-  contactBtn: { paddingHorizontal: 16, paddingVertical: 8, borderRadius: 12, borderWidth: 1, borderColor: '#596859' },
-  contactText: { fontSize: 12, fontWeight: 'bold', color: '#596859' },
-  bottomBar: { flexDirection: 'row', alignItems: 'center', padding: 24, paddingBottom: 32, backgroundColor: 'white', borderTopWidth: 1, borderTopColor: '#F3F4F6', gap: 16 },
-  cartIconBtn: { padding: 16, borderRadius: 20, backgroundColor: '#F0F9FF', alignItems: 'center', justifyContent: 'center' },
-  addBtn: { flex: 1 },
+  backBtn: { position: 'absolute', top: 20, left: 20, padding: 14, backgroundColor: 'rgba(255, 255, 255, 0.9)', borderRadius: 24, shadowColor: '#000', shadowOpacity: 0.1, shadowRadius: 10, shadowOffset: { width: 0, height: 4 } },
+  heartBtn: { position: 'absolute', top: 20, right: 20, padding: 14, backgroundColor: 'rgba(255, 255, 255, 0.9)', borderRadius: 24, shadowColor: '#000', shadowOpacity: 0.1, shadowRadius: 10, shadowOffset: { width: 0, height: 4 } },
+  content: { padding: 28, borderTopLeftRadius: 40, borderTopRightRadius: 40, backgroundColor: '#fffcf7', marginTop: -40, minHeight: 500, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 20, shadowOffset: { width: 0, height: -10 } },
+  badgeRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 18 },
+  categoryBadge: { paddingHorizontal: 14, paddingVertical: 6, backgroundColor: '#eae8e0', borderRadius: 16 },
+  categoryText: { fontSize: 11, fontWeight: '800', color: '#596859', letterSpacing: 0.5 },
+  ratingRow: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  ratingText: { fontSize: 13, fontWeight: '700', color: '#65655e' },
+  title: { fontSize: 30, fontWeight: '800', color: '#383833', marginBottom: 12, lineHeight: 36 },
+  price: { fontSize: 26, fontWeight: '800', color: '#596859', marginBottom: 20 },
+  description: { fontSize: 16, color: '#65655e', lineHeight: 26, marginBottom: 36, fontWeight: '500' },
+  sellerCard: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 20, backgroundColor: 'white', borderRadius: 24, shadowColor: '#383833', shadowOpacity: 0.04, shadowRadius: 15, shadowOffset: { width: 0, height: 6 }, elevation: 2, borderWidth: 1, borderColor: '#eae8e0' },
+  sellerInfo: { flexDirection: 'row', alignItems: 'center', gap: 14 },
+  sellerAvatar: { width: 48, height: 48, borderRadius: 24, backgroundColor: '#875858' },
+  sellerName: { fontSize: 16, fontWeight: '800', color: '#383833', marginBottom: 2 },
+  sellerSub: { fontSize: 13, color: '#81817a', fontWeight: '500' },
+  contactBtn: { paddingHorizontal: 16, paddingVertical: 10, borderRadius: 16, borderWidth: 1.5, borderColor: '#596859' },
+  contactText: { fontSize: 13, fontWeight: '800', color: '#596859' },
+  bottomBar: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 24, paddingVertical: 20, paddingBottom: 36, backgroundColor: '#fffcf7', borderTopWidth: 1, borderTopColor: '#eae8e0', gap: 16 },
+  cartIconBtn: { padding: 18, borderRadius: 24, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: '#eae8e0', shadowColor: '#383833', shadowOpacity: 0.04, shadowRadius: 10, shadowOffset: { width: 0, height: 4 } },
+  addBtn: { flex: 1, backgroundColor: '#596859' },
 });

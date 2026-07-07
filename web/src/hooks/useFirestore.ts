@@ -5,14 +5,14 @@ import { db } from "@/lib/firebase";
 import { collection, onSnapshot, query, orderBy, limit } from "firebase/firestore";
 
 export const useFirestore = (collectionName: string) => {
-  const [data, setData] = useState<any[]>([]);
-  const [lastUpdate, setLastUpdate] = useState<any>(null);
+  const [data, setData] = useState<Record<string, unknown>[]>([]);
+  const [lastUpdate, setLastUpdate] = useState<Record<string, unknown> | null>(null);
 
   useEffect(() => {
     const q = query(collection(db, collectionName), orderBy("createdAt", "desc"), limit(5));
     
     const unsubscribe = onSnapshot(q, (snapshot) => {
-      const items: any[] = [];
+      const items: Record<string, unknown>[] = [];
       snapshot.forEach((doc) => items.push({ id: doc.id, ...doc.data() }));
       
       setData(prev => {

@@ -5,7 +5,7 @@ import { auth } from "@/lib/firebase";
 import { onAuthStateChanged, User, signOut } from "firebase/auth";
 
 export const useAuth = () => {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User | { uid: string; email: string; role: string } | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -20,6 +20,7 @@ export const useAuth = () => {
                 return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
             }).join(''));
             const decoded = JSON.parse(jsonPayload);
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setUser({ uid: decoded.id, email: decoded.email, role: decoded.role });
         } catch (e) {
             console.error("Error decoding token", e);

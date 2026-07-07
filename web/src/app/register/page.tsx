@@ -23,8 +23,12 @@ export default function RegisterPage() {
       const userCred = await createUserWithEmailAndPassword(auth, email, password);
       await updateProfile(userCred.user, { displayName: name });
       router.push('/profile');
-    } catch (err: any) {
-      setError(err.message || 'Failed to register');
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message || 'Failed to register');
+      } else {
+        setError('Failed to register');
+      }
     } finally {
       setLoading(false);
     }

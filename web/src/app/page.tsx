@@ -2,6 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import { Button } from '@/components/ui/Button';
 import { Card, CardImage, CardContent } from '@/components/ui/Card';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Vrindaa Crochet | Handcrafted with Intention',
@@ -24,7 +25,7 @@ export default function Home() {
 
       <div className="mb-8 flex justify-between items-end">
         <h2 className="text-3xl font-headline font-bold text-[#383833]">Featured Magic</h2>
-        <a href="/category/all" className="text-[#596859] font-semibold hover:underline hidden sm:block">View all items →</a>
+        <Link href="/category/all" className="text-[#596859] font-semibold hover:underline hidden sm:block">View all items →</Link>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -63,7 +64,7 @@ export default function Home() {
       </div>
       
       <div className="mt-8 text-center sm:hidden">
-        <a href="/category/all" className="text-[#596859] font-semibold hover:underline">View all items →</a>
+        <Link href="/category/all" className="text-[#596859] font-semibold hover:underline">View all items →</Link>
       </div>
     </div>
   );

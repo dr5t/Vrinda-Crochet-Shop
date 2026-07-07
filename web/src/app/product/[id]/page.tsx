@@ -2,10 +2,13 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/Button';
+import { useCart } from '@/context/CartContext';
 
 export default function ProductDetailPage({ params }: { params: { id: string } }) {
   const [selectedColor, setSelectedColor] = useState('Cream');
   const [quantity, setQuantity] = useState(1);
+  const [customNote, setCustomNote] = useState('');
+  const { addToCart } = useCart();
 
   return (
     <div className="container mx-auto px-4 py-12 mt-20 max-w-6xl">
@@ -58,6 +61,8 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
           <div className="mb-8">
             <label className="block text-sm font-semibold mb-2 uppercase tracking-wider text-[#81817a]">Custom Request (Optional)</label>
             <textarea
+              value={customNote}
+              onChange={(e) => setCustomNote(e.target.value)}
               placeholder="E.g., Can you make the sleeves a bit longer?"
               className="w-full bg-[#eae8e0]/50 border border-[#bbb9b2] rounded-xl p-4 text-sm focus:outline-none focus:border-[#596859] resize-none"
               rows={3}
@@ -71,7 +76,18 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
               <span className="w-12 text-center font-semibold">{quantity}</span>
               <button onClick={() => setQuantity(quantity + 1)} className="text-xl font-medium w-8 h-8 flex items-center justify-center hover:bg-[#eae8e0] rounded-full">+</button>
             </div>
-            <Button className="flex-1 !h-14" size="lg">Add to Cart - ₹{2499 * quantity}</Button>
+            <Button 
+              className="flex-1 !h-14" 
+              size="lg"
+              onClick={() => addToCart({
+                id: params.id,
+                title: 'Autumn Crochet Sweater',
+                price: 2499,
+                images: ['https://via.placeholder.com/600x750']
+              }, quantity, selectedColor, customNote)}
+            >
+              Add to Cart - ₹{2499 * quantity}
+            </Button>
             <button className="w-14 h-14 flex items-center justify-center rounded-full border border-[#bbb9b2] hover:bg-[#eae8e0] transition-colors">
               <span className="material-symbols-outlined text-[24px] text-[#596859]">favorite</span>
             </button>

@@ -10,24 +10,30 @@ interface Product {
 }
 
 interface CartItem {
+  id: string; // unique cart item id
   product: Product;
   quantity: number;
+  variant?: string;
+  customNote?: string;
 }
 
 interface CartContextType {
   cart: CartItem[];
-  addToCart: (product: Product) => void;
-  removeFromCart: (productId: string) => void;
-  updateQuantity: (productId: string, delta: number) => void;
+  addToCart: (product: Product, quantity?: number, variant?: string, customNote?: string) => void;
+  removeFromCart: (cartItemId: string) => void;
+  updateQuantity: (cartItemId: string, delta: number) => void;
   clearCart: () => void;
   totalItems: number;
   totalPrice: number;
+  isCartOpen: boolean;
+  setIsCartOpen: (isOpen: boolean) => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [cart, setCart] = useState<CartItem[]>([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   // Load cart from localStorage
   useEffect(() => {
@@ -46,26 +52,32 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem("vrindaa-cart", JSON.stringify(cart));
   }, [cart]);
 
-  const addToCart = (product: Product) => {
+  const addToCart = (product: Product, quantity = 1, variant?: string, customNote?: string) => {
     setCart((prev) => {
-      const existing = prev.find((item) => item.product.id === product.id);
+      // Check if exact same item exists
+      const existing = prev.find((item) => 
+        item.product.id === product.id && 
+        item.variant === variant && 
+        item.customNote === customNote
+      );
       if (existing) {
         return prev.map((item) =>
-          item.product.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+          item.id === existing.id ? { ...item, quantity: item.quantity + quantity } : item
         );
       }
-      return [...prev, { product, quantity: 1 }];
+      return [...prev, { id: Date.now().toString() + Math.random().toString(36).substr(2, 9), product, quantity, variant, customNote }];
     });
+    setIsCartOpen(true);
   };
 
-  const removeFromCart = (productId: string) => {
-    setCart((prev) => prev.filter((item) => item.product.id !== productId));
+  const removeFromCart = (cartItemId: string) => {
+    setCart((prev) => prev.filter((item) => item.id !== cartItemId));
   };
 
-  const updateQuantity = (productId: string, delta: number) => {
+  const updateQuantity = (cartItemId: string, delta: number) => {
     setCart((prev) =>
       prev.map((item) =>
-        item.product.id === productId
+        item.id === cartItemId
           ? { ...item, quantity: Math.max(1, item.quantity + delta) }
           : item
       )

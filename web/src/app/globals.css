@@ -1,11 +1,6 @@
 @import "tailwindcss";
 
-/* =====================================================
-   Vrindaa Crochet — Liquid UI Global Styles
-   Premium Soft Liquid Color Palette
-   ===================================================== */
-
-:root {
+@theme {
   --color-primary: #596859;
   --color-secondary: #875858;
   --color-tertiary: #6c6450;
@@ -17,19 +12,20 @@
   --color-outline: #81817a;
   --color-outline-variant: #bbb9b2;
   --color-error: #ae4025;
-
+  --color-text-muted: #888880;
+  --color-gold: #c5a572;
   --font-headline: 'Noto Serif', serif;
   --font-body: 'Manrope', sans-serif;
   --font-label: 'Manrope', sans-serif;
-  --color-surface-card: #fffcf7;
-  --color-text-muted: #888880;
-  --color-gold: #c5a572;
   --shadow-soft: 0 8px 30px rgba(56, 56, 51, 0.05);
   --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.03);
-  
   --radius-xl: 0.75rem;
-  --radius-full: 9999px;
 }
+
+/* =====================================================
+   Vrindaa Crochet — Liquid UI Global Styles
+   Premium Soft Liquid Color Palette
+   ===================================================== */
 
 html { scroll-behavior: smooth; }
 
